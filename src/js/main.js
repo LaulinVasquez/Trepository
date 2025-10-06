@@ -2,9 +2,6 @@ import { getParkData, getParkInfoLinks, getInfoLinks } from "./parkService.mjs";
 import { setHeaderFooter } from "./setHeaderFooter.mjs";
 import { mediaCardTemplate } from "./templates.mjs";
 
-const parkData = await getParkData();
-const parkInfoLinks = getParkInfoLinks();
-getInfoLinks(parkData.images);
 
 
 function setParkIntro(data) {
@@ -15,9 +12,13 @@ function setParkIntro(data) {
 
 console.log(parkData);
 async function init() {
+  const parkData = await getParkData();
+  const parkInfoLinks = getParkInfoLinks();
+  
   setHeaderFooter(parkData);
   setParkIntro(parkData);
   mediaCardTemplate(parkInfoLinks);
+  getInfoLinks(parkData.images);
 }
 
 init();
