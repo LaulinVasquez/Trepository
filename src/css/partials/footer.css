@@ -1,0 +1,44 @@
+/* footer styles */
+
+.contact {
+    background-image: url("../images/topo_pattern.png");
+    padding: 1.5rem;
+  }
+  
+  .contact > h3 {
+    font-family: var(--bs-font-serif);
+    text-transform: uppercase;
+    font-size: 0.8em;
+    margin-top: 0.5rem;
+  }
+  
+  .contact h4 {
+    margin-top: 0.8rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.8em;
+  }
+  
+  .contact p {
+    font-size: 0.8em;
+    line-height: 1;
+    color: var(--bs-grey-2);
+    margin: 0.5rem 0;
+  }
+  
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+  
+  .disclaimer {
+    padding: 0 1em;
+  }
+  

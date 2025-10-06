@@ -1,0 +1,57 @@
+/* Hero banner */
+.hero-banner {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .hero-banner > img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    grid-column: 1/2;
+    grid-row: 1/3;
+  }
+  
+  .hero-banner__content {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 0.5em 1em;
+  }
+  
+  .hero-banner__title {
+    font-size: 1.8em;
+  }
+  
+  .hero-banner__subtitle {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.8rem;
+  }
+  
+  
+  /* Intro and info sections */
+  
+  .intro {
+    padding: 1em;
+  }
+  
+  .intro > h1 {
+    font-family: var(--bs-font-serif);
+    font-size: 2em;
+    font-weight: normal;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+  }
+  
+  .info > * {
+    flex: 1;
+  }
