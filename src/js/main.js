@@ -10,7 +10,7 @@ function setParkIntro(data) {
     <p class="intro__description">${data.description}</p>`;
 }
 
-console.log(parkData);
+
 async function init() {
   const parkData = await getParkData();
   const parkInfoLinks = getParkInfoLinks();
