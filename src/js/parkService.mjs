@@ -224,7 +224,7 @@ async function getJson(url) {
 }
 
 export async function getParkData() {
-  const data = await getJson("parks?parkCode=glec");
+  const data = await getJson("parks?parkCode=canyon");
   return data.data[0];
 }
 
@@ -245,4 +245,15 @@ export function getMailingAddress(addresses) {
 export function getVoicePhone(phoneNumbers) {
   const phone = phoneNumbers.find((phone) => phone.type === "Voice");
   return phone.phoneNumber;
+}
+
+// This function create a new API call to get alerts for the park (used in the conditions.Js file)
+export async function getAlerts(parkCode) {
+  const data = await getJson(`alerts?parkCode=${parkCode}`);
+  return data.data;
+}
+
+export async function getVisitorCenterData(parkcode) {
+  const data = await getJson(`visitorcenters?parkcode=${parkcode}`);
+  return data.data;
 }
