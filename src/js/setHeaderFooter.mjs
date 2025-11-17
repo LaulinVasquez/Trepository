@@ -1,4 +1,5 @@
 import { getMailingAddress, getVoicePhone } from "./parkService.mjs";
+import enableNavigation from "./navigation.mjs";
 
 export function setHeaderFooter(data) {
   // insert data into disclaimer section
@@ -12,6 +13,7 @@ export function setHeaderFooter(data) {
   // use the template function above to set the rest of the park specific info in the header
   document.querySelector(".hero-banner__content").innerHTML =
     parkInfoTemplate(data);
+    enableNavigation();
 
   // set the footer info
   const mailing = getMailingAddress(data.addresses);
@@ -28,6 +30,8 @@ export function setHeaderFooter(data) {
     </section>  
     `;
 }
+
+
 // Template for info in the header picture
 function parkInfoTemplate(info) {
   return `<a href="/" class="hero-banner__title">${info.name}</a>
