@@ -1,7 +1,6 @@
 @import 'partials/global.css';
 @import 'partials/footer.css'; 
-@import 'partials/header.css';  /*nav bar is in this css file*/
-@import 'partials/variable.css'; /* skip links and title and logo styling here*/
+@import 'partials/header.css';  
+@import 'partials/variable.css';
 @import 'partials/utilities.css';
-@import 'partials/blocks.css'; /* hero and banners are in this css file*/
-
+@import 'partials/blocks.css'; 
