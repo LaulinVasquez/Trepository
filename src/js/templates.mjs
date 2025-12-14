@@ -1,35 +1,45 @@
 import spritePath from "../images/sprite.symbol.svg";
 
-// this template is the description of the park
-export function setParkIntro(data) {
-  const intro = document.querySelector(".intro");
-  intro.innerHTML = `<h1 class="intro__title">${data.fullName}</h1>
-    <p class="intro__description">${data.description}</p>`;
+export function parkInfoTemplate(info) {
+  return `<a href="/" class="hero-banner__title">${info.name}</a>
+    <p class="hero-banner__subtitle">
+      <span>${info.designation}</span>
+      <span>${info.states}</span>
+    </p>`;
 }
 
-// This template is the one that shows the cards with links to other pages
 export function mediaCardTemplate(info) {
-  const infoMap = info
-    .map(
-      (item) => `
-        <div class="media-card">
-        <a href="${item.link}">
-        <img src="${item.image}"alt="${item.name}" class="media-card__img" />
-        <h3 class="media-card__title">${item.name}</h3>
-        </a>
-        <p>${item.description}</p>
-    </div>
-    `
-    )
-    .join("");
-
-  const infoSelector = document.querySelector(".info");
-  infoSelector.innerHTML = infoMap;
-  return infoSelector;
+  return `<div class="media-card">
+    <a href="${info.link}">
+    <img src="${info.image}" alt="${info.name}" class="media-card__img">
+    <h3 class="media-card__title">${info.name}</h3>
+    </a>
+   <p>${info.description}</p>
+   <p>M</p>
+     </div>`;
 }
+function getMailingAddress(addresses) {
+  const mailing = addresses.find((address) => address.type === "Mailing");
+  return mailing;
+}
+function getVoicePhone(numbers) {
+  const voice = numbers.find((number) => number.type === "Voice");
+  return voice.phoneNumber;
+}
+export function footerTemplate(info) {
+  const mailing = getMailingAddress(info.addresses);
+  const voice = getVoicePhone(info.contacts.phoneNumbers);
 
-
-//  Here are the templates for the conditions page alerts and visitor centers
+  return `<section class="contact">
+    <h3>Contact Info</h3>
+    <h4>Mailing Address:</h4>
+    <div><p>${mailing.line1}<p>
+    <p>${mailing.city}, ${mailing.stateCode} ${mailing.postalCode}</p></div>
+    <h4>Phone:</h4>
+    <p>${voice}</p>
+  </section>
+    `;
+}
 
 export function alertTemplate(alert) {
   let alertType = "";
@@ -41,35 +51,28 @@ export function alertTemplate(alert) {
     default:
       alertType = alert.category.toLowerCase();
   }
-  const date = alert.lastIndexedDate;
-  const dateOnly = date.split(" ")[0];
   return `<li class="alert">
   <svg class="icon" focusable="false" aria-hidden="true">
     <use xlink:href="${spritePath}#alert-${alertType}"></use>
   </svg>
   <div>
     <h3 class="alert-${alertType}">${alert.title}</h3>
-    <h5>Date: ${dateOnly}</h5>
     <p>${alert.description}</p>
   </div></li>`;
 }
 
-
 export function visitorCenterTemplate(center) {
-  // const hours = center.operatingHours[0].standardHours.friday; This will be used to project hour depending the day
-
   return `<li class="visitor-center">
-<h4><a href="visitor-center.html?id=${center.id}">${center.name}</a></h4>
-  <h3>${center.name}</h3>
+  <h4><a href="visitor-center.html?id=${center.id}">${center.name}</a></h4>
   <p>${center.description}</p>
-  <p>${center.directionsInfo}</p> `;
-}
-
-export function activityTemplate(activity) {
-  return `<li class="activity-item">
-  <p>${activity.name}</p>
+  <p>${center.directionsInfo}</p>
   </li>`;
 }
+
+export function activityListTemplate(activities) {
+  return activities.map((activity) => `<li>${activity.name}</li>`).join("");
+}
+
 export function iconTemplate(iconId) {
   return `<svg class="icon" role="presentation" focusable="false">
             <use
@@ -145,4 +148,3 @@ export function vcContactsTemplate(data) {
 export function vcImageTemplate(data) {
   return `<li><img src="${data.url}" alt="${data.altText}" ><li>`;
 }
-

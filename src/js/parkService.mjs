@@ -1,7 +1,3 @@
-const baseUrl = "https://developer.nps.gov/api/v1/";
-
-const apiKey = import.meta.env.VITE_NPS_API_KEY;
-
 const park = {
   id: "F58C6D24-8D10-4573-9826-65D42B8B83AD",
   url: "https://www.nps.gov/yell/index.htm",
@@ -19,28 +15,28 @@ const park = {
         phoneNumber: "307-344-7381",
         description: "",
         extension: "",
-        type: "Voice",
+        type: "Voice"
       },
       {
         phoneNumber: "307-344-2014",
         description: "",
         extension: "",
-        type: "Fax",
+        type: "Fax"
       },
       {
         phoneNumber: "307-344-2386",
         description: "",
         extension: "",
-        type: "TTY",
-      },
+        type: "TTY"
+      }
     ],
     emailAddresses: [
       {
         description:
           "Contact Yellowstone's park rangers for general park questions, lost and found, or for special use permits.",
-        emailAddress: "YELL_Information@nps.gov",
-      },
-    ],
+        emailAddress: "YELL_Information@nps.gov"
+      }
+    ]
   },
   addresses: [
     {
@@ -52,7 +48,7 @@ const park = {
       line1: "2 Officers Row",
       type: "Physical",
       line3: "",
-      line2: "Yellowstone National Park Headquarters",
+      line2: "Yellowstone National Park Headquarters"
     },
     {
       postalCode: "82190-0168",
@@ -63,8 +59,8 @@ const park = {
       line1: "PO Box 168",
       type: "Mailing",
       line3: "",
-      line2: "",
-    },
+      line2: ""
+    }
   ],
   directionsInfo:
     "Yellowstone National Park covers nearly 3,500 square miles in the northwest corner of Wyoming (3% of the park is in Montana and 1% is in Idaho). Yellowstone has five entrance stations, and several are closed to regular vehicles during winter. It takes many hours to drive between these entrances, so be sure to check the status of roads at the entrance you intend to use while planning your trip and before you arrive.",
@@ -77,7 +73,7 @@ const park = {
         "Brilliant blues and greens of a hot spring ringed by oranges, yellows, reds, and browns.",
       caption:
         "The bright colors found in Grand Prismatic Spring come from thermophiles—microorganisms that thrive in hot temperatures",
-      url: "https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg",
+      url: "https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg"
     },
     {
       credit: "NPS/Jim Peaco",
@@ -85,28 +81,28 @@ const park = {
       altText:
         "A crowd of people standing along a wooden boardwalk watches a geyser erupt.",
       caption: "Aurum Geyser erupting",
-      url: "https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg",
+      url: "https://www.nps.gov/common/uploads/structured_data/3C7D2FBB-1DD8-B71B-0BED99731011CFCE.jpg"
     },
     {
       credit: "NPS/Diane Renkin",
       title: "Black Pool",
       altText: "A visitor stands on a boardwalk near a hot spring and a lake.",
       caption: "Black Pool at the West Thumb Geyser Basin",
-      url: "https://www.nps.gov/common/uploads/structured_data/3C7D383B-1DD8-B71B-0BEC4A4D6BDF7CAD.jpg",
+      url: "https://www.nps.gov/common/uploads/structured_data/3C7D383B-1DD8-B71B-0BEC4A4D6BDF7CAD.jpg"
     },
     {
       credit: "NPS/Jim Peaco",
       title: "Beehive Geyser",
       altText: "People on a wooden boardwalk watch a geyser erupt.",
       caption: "Visitors to the Upper Geyser Basin watch Beehive Geyser erupt.",
-      url: "https://www.nps.gov/common/uploads/structured_data/3C7D334F-1DD8-B71B-0B108C7771F4E854.jpg",
+      url: "https://www.nps.gov/common/uploads/structured_data/3C7D334F-1DD8-B71B-0B108C7771F4E854.jpg"
     },
     {
       credit: "NPS/Jim Peaco",
       title: "Wolf howling",
       altText: "A wolf howls while standing on a snowy field.",
       caption: "Alpha male of the Canyon wolf pack",
-      url: "https://www.nps.gov/common/uploads/structured_data/3C7D3BD3-1DD8-B71B-0BB607F9BAAE1271.jpg",
+      url: "https://www.nps.gov/common/uploads/structured_data/3C7D3BD3-1DD8-B71B-0BB607F9BAAE1271.jpg"
     },
     {
       credit: "NPS/Jim Peaco",
@@ -114,14 +110,14 @@ const park = {
       altText: "Visitors walk into a rustic, log and stone building.",
       caption:
         "The stone-and-log architecture of Fishing Bridge Trailside Museum became a prototype for park buildings all around the country",
-      url: "https://www.nps.gov/common/uploads/structured_data/3C7D573E-1DD8-B71B-0B5C0DF5BB91D043.jpg",
+      url: "https://www.nps.gov/common/uploads/structured_data/3C7D573E-1DD8-B71B-0B5C0DF5BB91D043.jpg"
     },
     {
       credit: "NPS/Diane Renkin",
       title: "Great Fountain Geyser",
       altText: "A geyser erupting in the middle of a large pool.",
       caption: "Great Fountain Geyser erupts against a blue summer sky",
-      url: "https://www.nps.gov/common/uploads/structured_data/3C7D5AB4-1DD8-B71B-0BF91CF45345ED16.jpg",
+      url: "https://www.nps.gov/common/uploads/structured_data/3C7D5AB4-1DD8-B71B-0BF91CF45345ED16.jpg"
     },
     {
       credit: "NPS/Jim Peaco",
@@ -129,7 +125,7 @@ const park = {
       altText:
         "A crowd in front of an erupting geyser during a snowy winter day.",
       caption: "Winter is a magical time to watch Old Faithful Geyser erupt",
-      url: "https://www.nps.gov/common/uploads/structured_data/3C7D610A-1DD8-B71B-0BEF676112007818.jpg",
+      url: "https://www.nps.gov/common/uploads/structured_data/3C7D610A-1DD8-B71B-0BEF676112007818.jpg"
     },
     {
       credit: "NPS/Jim Peaco",
@@ -138,21 +134,21 @@ const park = {
         "Visitors walk in front of a brightly colored, terraced landscape.",
       caption:
         "The vibrant colors of Palette Springs are formed by thermophiles—heat-loving organisms",
-      url: "https://www.nps.gov/common/uploads/structured_data/3C7D8903-1DD8-B71B-0BA8669AEEF74379.jpg",
+      url: "https://www.nps.gov/common/uploads/structured_data/3C7D8903-1DD8-B71B-0BA8669AEEF74379.jpg"
     },
     {
       credit: "NPS/Peggy Olliff",
       title: "Bighorn sheep",
       altText: "Two bighorn sheep laying on the ground.",
       caption: "Two bighorn rams rest and chew their cud",
-      url: "https://www.nps.gov/common/uploads/structured_data/3C7D95DD-1DD8-B71B-0BC4FA19BD72F0EC.jpg",
+      url: "https://www.nps.gov/common/uploads/structured_data/3C7D95DD-1DD8-B71B-0BC4FA19BD72F0EC.jpg"
     },
     {
       credit: "NPS/Diane Renkin",
       title: "Lower Falls from Artist Point",
       altText: "A river plunges into a steep, barren canyon.",
       caption: "Lower Falls from Artist Point",
-      url: "https://www.nps.gov/common/uploads/structured_data/8A729E5B-B263-9C49-7AD4C4B8E70064E0.jpg",
+      url: "https://www.nps.gov/common/uploads/structured_data/8A729E5B-B263-9C49-7AD4C4B8E70064E0.jpg"
     },
     {
       credit: "NPS/Diane Renkin",
@@ -160,102 +156,89 @@ const park = {
       altText:
         "A herd of bison grazing through a barren and steaming thermal area.",
       caption: "Bison near Mud Volcano",
-      url: "https://www.nps.gov/common/uploads/structured_data/8A869F85-FB2E-5EAF-11367EB2DB75963D.jpg",
+      url: "https://www.nps.gov/common/uploads/structured_data/8A869F85-FB2E-5EAF-11367EB2DB75963D.jpg"
     },
     {
       credit: "NPS/Jim Peaco",
       title: "Grizzly bear",
       altText: "A grizzly bear standing on a fallen tree.",
       caption: "Grizzly bear in the woods",
-      url: "https://www.nps.gov/common/uploads/structured_data/8A902498-9D11-D06D-E352C073E3E85A58.jpg",
+      url: "https://www.nps.gov/common/uploads/structured_data/8A902498-9D11-D06D-E352C073E3E85A58.jpg"
     },
     {
       credit: "NPS/Dave Krueger",
       title: "Yellowstone River",
       altText: "A greenish river meanders through a hilly river valley.",
       caption: "The Yellowstone River near Tower Fall",
-      url: "https://www.nps.gov/common/uploads/structured_data/8AB8F1A3-D1A0-A6FB-E8E5CAA8B2937264.jpeg",
-    },
+      url: "https://www.nps.gov/common/uploads/structured_data/8AB8F1A3-D1A0-A6FB-E8E5CAA8B2937264.jpeg"
+    }
   ],
   weatherInfo:
     "Yellowstone's weather can vary quite a bit, even in a single day. In the summer, daytime highs can exceed 70°F (21°C), only to drop 20 or more degrees when a thunderstorm rolls through. It can snow during any month of the year, and winter lows frequently drop below 0°F (-18°C), especially at night. Bring a range of clothing options, including a warm jacket and rain gear, even in the summer.",
   name: "Yellowstone",
-  designation: "National Park",
+  designation: "National Park"
 };
-
-// Links and images for the three main park info sections on the homepage
 const parkInfoLinks = [
   {
     name: "Current Conditions &#x203A;",
     link: "conditions.html",
     image: park.images[2].url,
     description:
-      "See what conditions to expect in the park before leaving on your trip!",
+      "See what conditions to expect in the park before leaving on your trip!"
   },
   {
     name: "Fees and Passes &#x203A;",
     link: "fees.html",
     image: park.images[3].url,
-    description: "Learn about the fees and passes that are available.",
+    description: "Learn about the fees and passes that are available."
   },
   {
     name: "Visitor Centers &#x203A;",
     link: "visitor_centers.html",
     image: park.images[9].url,
-    description: "Learn about the visitor centers in the park.",
-  },
+    description: "Learn about the visitor centers in the park."
+  }
 ];
 
+const baseUrl = "https://developer.nps.gov/api/v1/";
+const apiKey = import.meta.env.VITE_NPS_API_KEY;
+
 async function getJson(url) {
-  const option = {
+  const options = {
     method: "GET",
     headers: {
-      "X-Api-Key": apiKey,
-    },
+      "X-Api-Key": apiKey
+    }
   };
   let data = {};
-  const response = await fetch(baseUrl + url, option);
-
+  const response = await fetch(baseUrl + url, options);
   if (response.ok) {
     data = await response.json();
-  } else throw new Error(`HTTP error: ${response.status}`);
-
+  } else throw new Error("response not ok");
   return data;
 }
 
-export async function getParkData() {
-  const data = await getJson("parks?parkCode=canyon");
-  return data.data[0];
-}
-
 export function getInfoLinks(data) {
-  // Why index + 2 below? no real reason. we don't want index 0 since that is the one we used for the banner...I decided to skip an image.
   const withUpdatedImages = parkInfoLinks.map((item, index) => {
     item.image = data[index + 2].url;
     return item;
   });
   return withUpdatedImages;
 }
-export function getMailingAddress(addresses) {
-  const mailing = addresses.find((address) => address.type === "Mailing");
 
-  return mailing;
+export async function getParkData() {
+  const parkData = await getJson("parks?parkCode=yell ");
+  return parkData.data[0];
 }
 
-export function getVoicePhone(phoneNumbers) {
-  const phone = phoneNumbers.find((phone) => phone.type === "Voice");
-  return phone.phoneNumber;
+export async function getParkAlerts(code) {
+  const parkData = await getJson(`alerts?parkCode=${code}`);
+  return parkData.data;
 }
 
-// This function create a new API call to get alerts for the park (used in the conditions.Js file)
-export async function getAlerts(parkCode) {
-  const data = await getJson(`alerts?parkCode=${parkCode}`);
-  return data.data;
-}
-
-export async function getVisitorCenterData(parkcode) {
-  const data = await getJson(`visitorcenters?parkcode=${parkcode}`);
-  return data.data;
+export async function getParkVisitorCenters(code) {
+  const parkData = await getJson(`visitorcenters?parkCode=${code}`);
+  return parkData.data;
 }
 
 export async function getParkVisitorCenterDetails(id) {

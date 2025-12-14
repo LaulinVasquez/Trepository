@@ -1,6 +1,6 @@
-import "../css/style.css"; // we can do this because we are using Vite...
+import "../css/style.css"; 
 import "../css/visitor-center.css"
-import {setHeaderFooter} from "./setHeaderFooter.mjs";
+import { setHeaderFooter2 } from "./setHeaderFooter.mjs";
 import { getParkData, getParkVisitorCenterDetails } from "./parkService.mjs";
 import {
   vcInfoTemplate,
@@ -21,12 +21,12 @@ function getParam(param) {
 }
 
 function buildPage(data) {
-  // since we have all the structure in place in the HTML, this solution chooses to insert content into the existing structure instead of generating all the structure with the content
+ 
   document.querySelector(".vc-name").innerHTML = vcTitleTemplate(data.name);
   document.querySelector(".vc-info").innerHTML = vcInfoTemplate(data);
   const detailsEl = document.querySelector(".vc-details-list");
   detailsEl.innerHTML = "";
-  // addresses section
+
   const addressHTML = vcAddressesListTemplate(data.addresses);
   detailsEl.insertAdjacentHTML(
     "beforeend",
@@ -37,7 +37,7 @@ function buildPage(data) {
       addressHTML
     )
   );
-  // directions
+  
   detailsEl.insertAdjacentHTML(
     "beforeend",
     vcDetailsTemplate(
@@ -47,7 +47,7 @@ function buildPage(data) {
       vcDirectionsTemplate(data.directionsInfo)
     )
   );
-  // amenities section.
+
   const amenitiesHTML = listTemplate(data.amenities, vcAmenityTemplate);
   detailsEl.insertAdjacentHTML(
     "beforeend",
@@ -75,8 +75,17 @@ async function init() {
   const parkData = await getParkData();
   const id = getParam("id");
   const centerDetails = await getParkVisitorCenterDetails(id);
-  setHeaderFooter(parkData);
+  setHeaderFooter2(parkData);
   buildPage(centerDetails);
+}
+
+export function iconTemplate(iconId) {
+  return `<svg class="icon" role="presentation" focusable="false">
+  <use
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xlink:href="/images/sprite.symbol.svg#${iconId}"
+  ></use>
+  </svg>`;
 }
 
 init();

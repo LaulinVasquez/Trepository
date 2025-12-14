@@ -2,46 +2,43 @@ import "../css/style.css";
 import "../css/conditions.css";
 import {
   getParkData,
-  getAlerts,
-  getVisitorCenterData,
+  getParkAlerts,
+  getParkVisitorCenters
 } from "./parkService.mjs";
-import { setHeaderFooter } from "./setHeaderFooter.mjs";
 import {
+  activityListTemplate,
   alertTemplate,
-  visitorCenterTemplate,
-  activityTemplate,
+  visitorCenterTemplate
 } from "./templates.mjs";
+import setHeaderFooter from "./setHeaderFooter.mjs";
 
 function setAlerts(alerts) {
   const alertsContainer = document.querySelector(".alerts > ul");
   alertsContainer.innerHTML = "";
   const html = alerts.map(alertTemplate);
-  alertsContainer.insertAdjacentHTML("beforeend", html.join(""));
+  alertsContainer.insertAdjacentHTML("afterbegin", html.join(""));
 }
 
 function setVisitorCenters(centers) {
-  const visitorContainer = document.querySelector(".visitorList");
-  visitorContainer.innerHTML = "";
+  const centersContainer = document.querySelector(".visitor ul");
   const html = centers.map(visitorCenterTemplate);
-  visitorContainer.insertAdjacentHTML("beforeend", html.join(""));
+  centersContainer.insertAdjacentHTML("afterbegin", html.join(""));
 }
 
-function setActivity(activities) {
-  const activityContainer = document.querySelector(".activityList");
-  activityContainer.innerHTML = "";
-  const html = activities.map(activityTemplate);
-  activityContainer.insertAdjacentHTML("beforeend", html.join(""));
+function setActivities(activities) {
+  const activitiesContainer = document.querySelector(".activities ul");
+  const html = activityListTemplate(activities);
+  activitiesContainer.insertAdjacentHTML("afterbegin", html);
 }
 
 async function init() {
   const parkData = await getParkData();
-  const alertsData = await getAlerts(parkData.parkCode);
-  const visitorCentersData = await getVisitorCenterData(parkData.parkCode);
-
+  const alerts = await getParkAlerts(parkData.parkCode);
+  const visitorCenters = await getParkVisitorCenters(parkData.parkCode);
   setHeaderFooter(parkData);
-  setAlerts(alertsData);
-  setVisitorCenters(visitorCentersData);
-  setActivity(parkData.activities);
+  setAlerts(alerts);
+  setVisitorCenters(visitorCenters);
+  setActivities(parkData.activities);
 }
 
 init();
